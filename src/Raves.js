@@ -4,7 +4,8 @@ import RaveCard from './RaveCard'
 //child of app
 
 function Raves({ raves }){
-    
+    //console.log(raves)
+
     const allRaves = raves.map((rave) => 
     <RaveCard key={rave.id} rave={rave} />)
 

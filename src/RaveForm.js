@@ -4,14 +4,25 @@ import React from 'react'
 
 function RaveForm(){
 
+    function handleSubmit(e){
+        e.preventDefault() //stop page from refreshing. 
+    }
+
     return (
         <div> 
             <h3>Add a Rave Container</h3>
-            <form>
+            <form onSubmit={handleSubmit} >
+                <label>
+                    Artist:
+                        <input type="text"/>
+                </label>
+                    <input type="submit" value="Add an event!"/>
             </form>
         </div>
     )
 }
+//upon submit, must post to database (Invoking a fetch post call)
+//frontend, render 
 
 //how to make this a controlled form
 //what happens on change and what happens on submit?
