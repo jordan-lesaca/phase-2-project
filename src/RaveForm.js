@@ -1,5 +1,7 @@
 import React from 'react'
 
+//both rave and raveform are children of app
+
 function RaveForm(){
     return (
         <div> 
