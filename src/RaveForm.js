@@ -18,7 +18,8 @@ function RaveForm({newRave}){
             },
             body: JSON.stringify({artist: artist})
         })
-        newRave({artist: artist})
+            .then((res) => res.json())
+            .then((rave) => newRave(rave))
     }
 
     function handleChange(e){
@@ -38,15 +39,17 @@ function RaveForm({newRave}){
         </div>
     )
 }
-//upon submit, must post to database (Invoking a fetch post call)
-//frontend, render 
 
-//how to make this a controlled form
-//what happens on change and what happens on submit?
-//What functions are called and where are they defined?
 
 //After post and get are done:
 // - router (need 3 routes)
 // - nav
+
+//After MVP:
+//Add attributes to raves
+//Accep img attribute in the form
+//Adding a like button and increment/decrement (is this going to involve a PATCH?
+//DOM manipulation for the userthat is cleared every time the app components mount?
+
 
 export default RaveForm

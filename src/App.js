@@ -2,6 +2,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import Raves from './Raves'
 import RaveForm from './RaveForm'
+import NavBar from './NavBar'
+import {Route, Switch} from 'react-router-dom'
+import Home from './Home'
 
 function App() {
   const [raves, setRaves] = useState([])
@@ -19,8 +22,20 @@ function newRave(newRave){
 
   return (
     <div className="App">
-      <Raves raves={raves} />
-      <RaveForm newRave={newRave} />
+      <NavBar />
+        <Switch>
+          <Route exact path ="/">
+            <Home />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route exact path="/raves">
+            <Raves raves={raves} />
+          </Route>
+          <Route exact path="/raves/new">
+            <RaveForm newRave={newRave} />
+          </Route>
+        </Switch>
       
     </div>
   );
