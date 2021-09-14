@@ -1,4 +1,5 @@
 import React from 'react'
+import RaveCard from './RaveCard'
 
 function Raves(){
     return(
