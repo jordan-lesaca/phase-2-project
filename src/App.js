@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import Raves from './Raves'
@@ -23,7 +22,6 @@ function App() {
 //form component
 //raves container component
 
-//what should our 5th component be?
-//NavBar or About?
+
 
 export default App;

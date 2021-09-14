@@ -3,9 +3,10 @@ import RaveCard from './RaveCard'
 
 function Raves(){
     return(
+        <div>
         <h3>Rave Container</h3>
-    )
-    //render raves here
+        </div>
+    )    //render raves here
 }
 
 export default Raves
