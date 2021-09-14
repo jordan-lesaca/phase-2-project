@@ -12,10 +12,15 @@ function App() {
   .then(data => setRaves(data))
 }, [] ) //empty array of dependencies
 
+function newRave(newRave){
+  setRaves([...raves, newRave])
+
+}
+
   return (
     <div className="App">
       <Raves raves={raves} />
-      <RaveForm />
+      <RaveForm newRave={newRave} />
       
     </div>
   );
