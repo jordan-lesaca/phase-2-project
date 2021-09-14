@@ -1,9 +1,12 @@
 import React from 'react'
 
-function RaveCard(){
+function RaveCard({ rave }){
+    console.log(rave)
     return(
         <div>
-            <h3>Rave Card</h3>
+            <h3>{rave.artist}</h3>
+            <p>{rave.date} </p>
+            <p>{rave.venue} </p>
         </div>
     )
 }

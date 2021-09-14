@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <Raves raves={raves} />
       <RaveForm />
+      
     </div>
   );
 }
@@ -31,6 +32,6 @@ function App() {
 //form component
 //raves container component
 
-
+//NavBar = rave, about, ???
 
 export default App;
