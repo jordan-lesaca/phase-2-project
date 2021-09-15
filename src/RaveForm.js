@@ -82,16 +82,4 @@ function RaveForm({newRave}){
     )
 }
 
-
-//After post and get are done:
-// - router (need 3 routes)
-// - nav
-
-//After MVP:
-//Add attributes to raves
-//Accep img attribute in the form
-//Adding a like button and increment/decrement (is this going to involve a PATCH?
-//DOM manipulation for the userthat is cleared every time the app components mount?
-
-
 export default RaveForm

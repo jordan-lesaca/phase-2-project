@@ -5,7 +5,8 @@ function NavBar(){
     return(
         <div>
             <NavLink style={{ marginRight: '10px'}} to='/'> Home</NavLink>
-            <NavLink style={{ marginRight: '10px'}} to='/raves'> Raves</NavLink>
+            <NavLink style={{ marginRight: '10px'}} to='/raves'>Raves</NavLink>
+            <NavLink style={{ marginRight: '10px'}} to='/about'>About</NavLink>
         </div>
     )
 }

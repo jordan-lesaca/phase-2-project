@@ -5,6 +5,7 @@ import RaveForm from './RaveForm'
 import NavBar from './NavBar'
 import {Route, Switch} from 'react-router-dom'
 import Home from './Home'
+import About from './About'
 
 function App() {
   const [raves, setRaves] = useState([])
@@ -18,7 +19,6 @@ function App() {
 function newRave(newRave){
   setRaves([...raves, newRave])
 }
-
   return (
     <div className="App">
       <NavBar />
@@ -33,22 +33,13 @@ function newRave(newRave){
             <Raves raves={raves} />
           </Route>
         </Switch>
-      
+        <Switch>
+          <Route exact path ="about">
+            <About />
+          </Route>
+        </Switch>
     </div>
   );
 }
-
-//see a toy. create a toy (covers both get and post)
-//app component counts as a component. renders a toy component. 
-//toys container component would render toy cards
-
-//which component handles data fetch call to get data (raves)
-//app
-
-//which components should have state?
-//form component
-//raves container component
-
-//NavBar = rave, about, ???
 
 export default App;

@@ -4,7 +4,6 @@ import RaveCard from './RaveCard'
 //child of app
 
 function Raves({ raves }){
-    //console.log(raves)
 
     const allRaves = raves.map((rave) => 
     <RaveCard 
@@ -22,8 +21,6 @@ function Raves({ raves }){
         {allRaves} 
         </div>   
     )    
-    //render raves here
-    //curlies above differentiate between JSX and reg JS
 }
 
 export default Raves
