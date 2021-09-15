@@ -1,12 +1,23 @@
 import React from 'react'
 
-function RaveCard({ rave }){
+function RaveCard({ rave, 
+    artist, 
+    image, 
+    date = "TBA", 
+    venue, 
+    city }){
+
+    const defaultPic = "https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950"
     console.log(rave)
     return(
         <div>
-            <h3>{rave.artist}</h3>
-            <p>{rave.date} </p>
-            <p>{rave.venue} </p>
+            <h3>{artist}</h3>
+            <p>Date: {!date ? "TBA" : date} </p>
+            <p>Venue / City: {!venue ? "TBA" : venue}, {!city ? "TBA" : city} </p>
+            <img src={!image ? defaultPic : image} alt={artist} style={{
+                height: 200,
+                width: 200
+              }} /> 
         </div>
     )
 }

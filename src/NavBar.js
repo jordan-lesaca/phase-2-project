@@ -6,7 +6,6 @@ function NavBar(){
         <div>
             <NavLink style={{ marginRight: '10px'}} to='/'> Home</NavLink>
             <NavLink style={{ marginRight: '10px'}} to='/raves'> Raves</NavLink>
-            <NavLink style={{ marginRight: '10px'}} to='/raves/new'> Add Raves</NavLink>
         </div>
     )
 }

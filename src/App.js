@@ -13,11 +13,10 @@ function App() {
   fetch('http://localhost:3000/raves')
   .then(res => res.json())
   .then(data => setRaves(data))
-}, [] ) //empty array of dependencies
+}, [] ) 
 
 function newRave(newRave){
   setRaves([...raves, newRave])
-
 }
 
   return (
@@ -30,10 +29,8 @@ function newRave(newRave){
         </Switch>
         <Switch>
           <Route exact path="/raves">
-            <Raves raves={raves} />
-          </Route>
-          <Route exact path="/raves/new">
             <RaveForm newRave={newRave} />
+            <Raves raves={raves} />
           </Route>
         </Switch>
       

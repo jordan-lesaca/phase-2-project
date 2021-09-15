@@ -7,7 +7,14 @@ function Raves({ raves }){
     //console.log(raves)
 
     const allRaves = raves.map((rave) => 
-    <RaveCard key={rave.id} rave={rave} />)
+    <RaveCard 
+    key={rave.id} 
+    rave={rave} 
+    date={rave.date}
+    venue={rave.venue}
+    city={rave.city}
+    artist={rave.artist}
+    image={rave.image}/>)
 
     return(
         <div>
