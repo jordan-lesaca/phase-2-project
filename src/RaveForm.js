@@ -36,8 +36,7 @@ function RaveForm({newRave}){
                 image: "",
                 date: "",
                 venue: "",
-                city: "",
-                defaultValue: ""
+                city: ""
             })
     }
 
