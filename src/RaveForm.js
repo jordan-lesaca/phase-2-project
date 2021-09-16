@@ -36,13 +36,15 @@ function RaveForm({newRave}){
                 image: "",
                 date: "",
                 venue: "",
-                city: ""
+                city: "",
+                defaultValue: ""
             })
     }
 
     function handleChange(e){
         let key = e.target.name
         let value = e.target.value
+        console.log(e)
 
         setFormData({...formData, [key] : value })
     }
@@ -56,8 +58,8 @@ function RaveForm({newRave}){
             type="text"
             name="artist"
             placeholder="Enter an artist's name..."
+            value={formData.artist}
             className="input-text"
-            defaultValue={formData.artist}
             onChange={handleChange}
           />
           <input
@@ -65,7 +67,7 @@ function RaveForm({newRave}){
             name="image"
             placeholder="Enter an url name..."
             className="input-text"
-            defaultValue={formData.image}
+            value={formData.image}
             onChange={handleChange}
           />
           <input
@@ -73,10 +75,25 @@ function RaveForm({newRave}){
             name="venue"
             placeholder="Enter an venue name..."
             className="input-text"
-            defaultValue={formData.venue}
+            value={formData.venue}
             onChange={handleChange}
           />
-
+          <input
+            type="text"
+            name="date"
+            placeholder="Enter an date"
+            className="input-text"
+            value={formData.date}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="city"
+            placeholder="Enter city"
+            className="input-text"
+            value={formData.city}
+            onChange={handleChange}
+          />
                     <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
             </form>
         </div>
@@ -84,20 +101,3 @@ function RaveForm({newRave}){
 }
 
 export default RaveForm
-
-// <label>
-//                     Album Cover:
-//                     <input style={{ marginRight: '10px'}} type="text" value={formData.image} onChange={handleChange}/>    
-//                 </label>
-//                 <label>
-//                     Date:
-//                     <input style={{ marginRight: '10px'}} type="text" value={formData.date} onChange={handleChange}/>    
-//                 </label>
-//                 <label>
-//                     Venue:
-//                     <input style={{ marginRight: '10px'}} type="text" value={formData.venue} onChange={handleChange}/>    
-//                 </label>
-//                 <label>
-//                     City:
-//                     <input style={{ marginRight: '10px'}} type="text" value={formData.city} onChange={handleChange}/>    
-//                 </label>
