@@ -31,8 +31,9 @@ function updateRave(updatedRave){
     if (rave.id !== updatedRave.id)
       return rave
         else 
-      return setRaves(revisedRave)
+      return updatedRave
   })
+  setRaves(revisedRave)
 }
 
   return (

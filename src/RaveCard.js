@@ -1,10 +1,10 @@
 import React from 'react'
 
 function RaveCard({ rave, deleteRave, updateRave}){
-    const { id, artist, image, venue, city, date, favorite } = rave
+    const { id, artist, image="https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950", venue, city, date, favorite } = rave
 
     function handleDeleteClick(){
-        fetch(`http://localhost:3001/raves/${id}`, {
+        fetch(`http://localhost:3000/raves/${id}`, {
       method: "DELETE"
     })
     deleteRave(id)
@@ -15,7 +15,7 @@ function RaveCard({ rave, deleteRave, updateRave}){
             favorite: false ? true : false
         }
 
-        fetch(`http://localhost:3001/raves/${id}` , {
+        fetch(`http://localhost:3000/raves/${id}` , {
             method: "PATCH",
             headers: {"content-type" : "application/json"},
             body: JSON.stringify(updatedRave)

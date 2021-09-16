@@ -25,7 +25,7 @@ function RaveForm({newRave}){
         fetch('http://localhost:3000/raves', {
             method: "POST", 
             headers: {
-                "Content-Type": "application/json"
+                "content-type": "application/json"
             },
             body: JSON.stringify(newEvent)
         })
@@ -41,36 +41,42 @@ function RaveForm({newRave}){
     }
 
     function handleChange(e){
-        let key = e.target.artist
+        let key = e.target.name
         let value = e.target.value
 
         setFormData({...formData, [key] : value })
     }
 
+
     return (
-        <div> 
+        <div className="container"> 
+            <form className="add-rave-form" onSubmit={handleSubmit} >
             <h3>Add a Rave Container</h3>
-            <form onSubmit={handleSubmit} >
-                <label>
-                    Artist:
-                    <input style={{marginRight: "10px"}} type="text" value={formData.artist} onChange={handleChange}/>
-                </label>
-                <label>
-                    Album Cover:
-                    <input style={{ marginRight: '10px'}} type="text" value={formData.image} onChange={handleChange}/>    
-                </label>
-                <label>
-                    Date:
-                    <input style={{ marginRight: '10px'}} type="text" value={formData.date} onChange={handleChange}/>    
-                </label>
-                <label>
-                    Venue:
-                    <input style={{ marginRight: '10px'}} type="text" value={formData.venue} onChange={handleChange}/>    
-                </label>
-                <label>
-                    City:
-                    <input style={{ marginRight: '10px'}} type="text" value={formData.city} onChange={handleChange}/>    
-                </label>
+            <input
+            type="text"
+            name="artist"
+            placeholder="Enter an artist's name..."
+            className="input-text"
+            defaultValue={formData.artist}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="image"
+            placeholder="Enter an url name..."
+            className="input-text"
+            defaultValue={formData.image}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="venue"
+            placeholder="Enter an venue name..."
+            className="input-text"
+            defaultValue={formData.venue}
+            onChange={handleChange}
+          />
+
                     <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
             </form>
         </div>
@@ -78,3 +84,20 @@ function RaveForm({newRave}){
 }
 
 export default RaveForm
+
+// <label>
+//                     Album Cover:
+//                     <input style={{ marginRight: '10px'}} type="text" value={formData.image} onChange={handleChange}/>    
+//                 </label>
+//                 <label>
+//                     Date:
+//                     <input style={{ marginRight: '10px'}} type="text" value={formData.date} onChange={handleChange}/>    
+//                 </label>
+//                 <label>
+//                     Venue:
+//                     <input style={{ marginRight: '10px'}} type="text" value={formData.venue} onChange={handleChange}/>    
+//                 </label>
+//                 <label>
+//                     City:
+//                     <input style={{ marginRight: '10px'}} type="text" value={formData.city} onChange={handleChange}/>    
+//                 </label>
