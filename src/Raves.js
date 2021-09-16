@@ -13,12 +13,17 @@ function Raves({ raves }){
     venue={rave.venue}
     city={rave.city}
     artist={rave.artist}
-    image={rave.image}/>)
+    image={rave.image} />)
+
+
+
 
     return(
         <div>
+        <li className="">
         <h3>Rave Container</h3>
         {allRaves} 
+        </li>
         </div>   
     )    
 }
