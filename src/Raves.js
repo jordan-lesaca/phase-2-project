@@ -3,29 +3,17 @@ import RaveCard from './RaveCard'
 
 //child of app
 
-function Raves({ raves }){
-
-    const allRaves = raves.map((rave) => 
-    <RaveCard 
-    key={rave.id} 
-    rave={rave} 
-    date={rave.date}
-    venue={rave.venue}
-    city={rave.city}
-    artist={rave.artist}
-    image={rave.image} />)
-
-
-
-
-    return(
-        <div>
-        <li className="">
-        <h3>Rave Container</h3>
-        {allRaves} 
-        </li>
-        </div>   
-    )    
-}
+function Raves({raves, deleteRave, updateRave}) {
+    return (
+      <div id="rave-collection">
+        {raves.map(rave => {
+          return (
+            <RaveCard rave={rave} key={rave.id} deleteRave={deleteRave} updateRave={updateRave}/>
+                )
+          })
+        }
+      </div>
+    );
+  }
 
 export default Raves

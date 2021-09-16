@@ -3,53 +3,48 @@ import React, { useState } from 'react'
 //both rave and raveform are children of app
 
 function RaveForm({newRave}){
-    const [artist, setArtist] = useState("")
-    const [image, setImage] = useState("")
-    const [date, setDate] = useState("")
-    const [city, setCity] = useState("")
-    const [venue, setVenue] = useState("")
+    const [formData, setFormData] = useState({
+        artist: "",
+        image: "",
+        date: "",
+        venue: "",
+        city: ""
+    })
 
     function handleSubmit(e){
         e.preventDefault()
-        setArtist('') 
-        setImage('')
-        setDate('')
-        setCity('')
-        setVenue('')
+
+        const newEvent = {
+            artist: formData.artist,
+            image: formData.image,
+            date: formData.date,
+            venue: formData.venue,
+            city: formData.city
+        }
 
         fetch('http://localhost:3000/raves', {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({artist: artist, 
-                image: image, 
-                date: date, 
-                city: city, 
-                venue: venue})
+            body: JSON.stringify(newEvent)
         })
             .then((res) => res.json())
             .then((rave) => newRave(rave))
+            setFormData({
+                artist: "",
+                image: "",
+                date: "",
+                venue: "",
+                city: ""
+            })
     }
 
-    function handleArtistChange(e){
-        setArtist(e.target.value)
-    }
+    function handleChange(e){
+        let key = e.target.artist
+        let value = e.target.value
 
-    function handleImageChange(e){
-        setImage(e.target.value)
-    }
-
-    function handleDateChange(e){
-        setDate(e.target.value)
-    }
-
-    function handleVenueChange(e){
-        setVenue(e.target.value)
-    }
-
-    function handleCityChange(e){
-        setCity(e.target.value)
+        setFormData({...formData, [key] : value })
     }
 
     return (
@@ -58,23 +53,23 @@ function RaveForm({newRave}){
             <form onSubmit={handleSubmit} >
                 <label>
                     Artist:
-                    <input style={{marginRight: "10px"}} type="text" value={artist} onChange={handleArtistChange}/>
+                    <input style={{marginRight: "10px"}} type="text" value={formData.artist} onChange={handleChange}/>
                 </label>
                 <label>
                     Album Cover:
-                    <input style={{ marginRight: '10px'}} type="text" value={image} onChange={handleImageChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.image} onChange={handleChange}/>    
                 </label>
                 <label>
                     Date:
-                    <input style={{ marginRight: '10px'}} type="text" value={date} onChange={handleDateChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.date} onChange={handleChange}/>    
                 </label>
                 <label>
                     Venue:
-                    <input style={{ marginRight: '10px'}} type="text" value={venue} onChange={handleVenueChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.venue} onChange={handleChange}/>    
                 </label>
                 <label>
                     City:
-                    <input style={{ marginRight: '10px'}} type="text" value={city} onChange={handleCityChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.city} onChange={handleChange}/>    
                 </label>
                     <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
             </form>
