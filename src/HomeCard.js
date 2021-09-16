@@ -2,7 +2,9 @@ import React from 'react'
 
 function HomeCard({ rave }){
     return (
-        console.log(rave)
+        <div>
+            <h2>{rave.artist}</h2>
+        </div>
     )
 }
 
