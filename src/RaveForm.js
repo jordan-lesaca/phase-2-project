@@ -41,7 +41,10 @@ function RaveForm({newRave}){
     }
 
     function handleChange(e){
-        return console.log(e)
+        let key = e.target.artist
+        let value = e.target.value
+
+        setFormData({...formData, [key] : value })
     }
 
     return (
@@ -50,23 +53,23 @@ function RaveForm({newRave}){
             <form onSubmit={handleSubmit} >
                 <label>
                     Artist:
-                    <input style={{marginRight: "10px"}} type="text" value={artist} onChange={handleArtistChange}/>
+                    <input style={{marginRight: "10px"}} type="text" value={formData.artist} onChange={handleChange}/>
                 </label>
                 <label>
                     Album Cover:
-                    <input style={{ marginRight: '10px'}} type="text" value={image} onChange={handleImageChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.image} onChange={handleChange}/>    
                 </label>
                 <label>
                     Date:
-                    <input style={{ marginRight: '10px'}} type="text" value={date} onChange={handleDateChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.date} onChange={handleChange}/>    
                 </label>
                 <label>
                     Venue:
-                    <input style={{ marginRight: '10px'}} type="text" value={venue} onChange={handleVenueChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.venue} onChange={handleChange}/>    
                 </label>
                 <label>
                     City:
-                    <input style={{ marginRight: '10px'}} type="text" value={city} onChange={handleCityChange}/>    
+                    <input style={{ marginRight: '10px'}} type="text" value={formData.city} onChange={handleChange}/>    
                 </label>
                     <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
             </form>
