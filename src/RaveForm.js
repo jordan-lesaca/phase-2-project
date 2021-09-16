@@ -53,6 +53,7 @@ function RaveForm({newRave}){
         <div className="container"> 
             <form className="add-rave-form" onSubmit={handleSubmit} >
             <h3>Add a Rave Container</h3>
+            <label>Artist: </label>
             <input
             type="text"
             name="artist"
@@ -61,6 +62,7 @@ function RaveForm({newRave}){
             className="input-text"
             onChange={handleChange}
           />
+          <label>Image: </label>
           <input
             type="text"
             name="image"
@@ -69,6 +71,7 @@ function RaveForm({newRave}){
             value={formData.image}
             onChange={handleChange}
           />
+          <label>Venue: </label>
           <input
             type="text"
             name="venue"
@@ -77,6 +80,7 @@ function RaveForm({newRave}){
             value={formData.venue}
             onChange={handleChange}
           />
+          <label>Date: </label>
           <input
             type="text"
             name="date"
@@ -85,6 +89,7 @@ function RaveForm({newRave}){
             value={formData.date}
             onChange={handleChange}
           />
+          <label>City: </label>
           <input
             type="text"
             name="city"

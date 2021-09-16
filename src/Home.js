@@ -1,11 +1,19 @@
 import React from 'react'
+import HomeCard from './HomeCard'
 
-function Home(){
-    return(
-        <div>
-            <h3>Find upcoming raves!</h3>
+function Home({raves}){
+
+
+    return (
+        <div id="rave-collection">
+          {raves.map(rave => {
+            return (
+              <HomeCard rave={rave} key={rave.id} />
+                              )
+            })
+          }
         </div>
-    )
-}
+      );
+    }
 
 export default Home

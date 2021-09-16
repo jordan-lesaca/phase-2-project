@@ -10,8 +10,6 @@ function RaveCard({ rave, deleteRave, updateRave}){
         date, 
         likes } = rave
 
-    
-
     function handleDeleteClick(){
         fetch(`http://localhost:3000/raves/${id}`, {
       method: "DELETE"
@@ -52,6 +50,7 @@ function RaveCard({ rave, deleteRave, updateRave}){
 
     const defaultPic = "https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950https://cdn.shopify.com/s/files/1/0385/6229/files/d14211d213a7f0fbad2d13d08d3a4580c63e1dcf_large.jpg?v=1482619950"
     
+
     return(
         <div className="" >
         
