@@ -21,18 +21,32 @@ function newRave(newRave){
   setRaves([...raves, newRave])
 }
 
+function deleteRave(id){
+  const updatedRave = raves.filter(rave => rave.id !== id )
+  setRaves(updatedRave)
+} 
+
+function updateRave(updatedRave){
+  const revisedRave = raves.map((rave) => {
+    if (rave.id !== updatedRave.id)
+      return rave
+        else 
+      return setRaves(revisedRave)
+  })
+}
+
   return (
     <div className="App">
       <NavBar />
         <Switch>
           <Route exact path ="/">
-            <Home />
+            <Home raves={raves} />
           </Route>
         </Switch>
         <Switch>
           <Route exact path="/raves">
             <RaveForm newRave={newRave} />
-            <Raves raves={raves} />
+            <Raves raves={raves} deleteRave={deleteRave} updateRave={updateRave}/>
           </Route>
         </Switch>
         <Switch>
