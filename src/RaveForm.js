@@ -64,7 +64,7 @@ function RaveForm({newRave}){
           <input
             type="text"
             name="image"
-            placeholder="Enter an url name..."
+            placeholder="Enter an image url..."
             className="input-text"
             value={formData.image}
             onChange={handleChange}
@@ -80,7 +80,7 @@ function RaveForm({newRave}){
           <input
             type="text"
             name="date"
-            placeholder="Enter an date"
+            placeholder="Enter date of event..."
             className="input-text"
             value={formData.date}
             onChange={handleChange}
@@ -88,7 +88,7 @@ function RaveForm({newRave}){
           <input
             type="text"
             name="city"
-            placeholder="Enter city"
+            placeholder="Enter city of event..."
             className="input-text"
             value={formData.city}
             onChange={handleChange}
