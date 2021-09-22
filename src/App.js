@@ -4,7 +4,6 @@ import {Route, Switch} from 'react-router-dom'
 import Raves from './Raves'
 import RaveForm from './RaveForm'
 import NavBar from './NavBar'
-
 import Home from './Home'
 import About from './About'
 
