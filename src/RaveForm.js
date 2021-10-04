@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-//both rave and raveform are children of app
-
 function RaveForm({newRave}){
     const [formData, setFormData] = useState({
         artist: "",

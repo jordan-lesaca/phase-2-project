@@ -46,7 +46,9 @@ function updateRave(updatedRave){
         <Switch>
           <Route exact path="/raves">
             <RaveForm newRave={newRave} />
-            <Raves raves={raves} deleteRave={deleteRave} updateRave={updateRave}/>
+            <Raves raves={raves} 
+                    deleteRave={deleteRave} 
+                    updateRave={updateRave}/>                    
           </Route>
         </Switch>
         <Switch>
