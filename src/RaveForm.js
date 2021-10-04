@@ -42,16 +42,15 @@ function RaveForm({newRave}){
         let key = e.target.name
         let value = e.target.value
         console.log(e)
-
         setFormData({...formData, [key] : value })
     }
 
 
     return (
         <div className="container"> 
+            <h1>Submit Your Own Event Here </h1>
             <form className="add-rave-form" onSubmit={handleSubmit} >
-            <h3>Add a Rave Container</h3>
-            <label>Artist: </label>
+            <label>Artist:</label>
             <input
             type="text"
             name="artist"
@@ -95,8 +94,8 @@ function RaveForm({newRave}){
             className="input-text"
             value={formData.city}
             onChange={handleChange}
-          />
-                    <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
+            />
+            <input style={{ marginRight: '10px'}} type="submit" value="Add an event!"/>
             </form>
         </div>
     )

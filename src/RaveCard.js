@@ -22,7 +22,7 @@ function RaveCard({ rave, deleteRave, updateRave}){
             likes: likes + 1   
         }
 
-        fetch(`http://localhost:3000/raves/${id}` , {
+        fetch(`http://localhost:3000/raves/${id}`, {
             method: "PATCH",
             headers: {"content-type" : "application/json"},
             body: JSON.stringify(updatedRave)
@@ -36,7 +36,7 @@ function RaveCard({ rave, deleteRave, updateRave}){
             likes: likes - 1   
         }
     
-        fetch(`http://localhost:3000/raves/${id}` , {
+        fetch(`http://localhost:3000/raves/${id}`, {
             method: "PATCH",
             headers: {"content-type" : "application/json"},
             body: JSON.stringify(updatedRave)
@@ -46,7 +46,7 @@ function RaveCard({ rave, deleteRave, updateRave}){
         }
     
     return(
-        <div className="" >   
+        <div className="">   
             <h3>{artist}</h3>
                 <p>Likes: {likes}</p>          
             <h4>Date: {!date ? "TBA" : date} </h4>
